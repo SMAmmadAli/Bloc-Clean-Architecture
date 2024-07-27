@@ -17,6 +17,9 @@ class PasswordInputWidget extends StatelessWidget {
         if (value!.isEmpty) {
           return "Enter password";
         }
+        if (value.length < 6) {
+          return 'please enter password greater than 6';
+        }
         return null;
       },
       onFieldSubmitted: (value) {},

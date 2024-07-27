@@ -1,3 +1,4 @@
+import 'package:bloc_clean_architecture/utils/valildation.dart';
 import 'package:flutter/material.dart';
 
 class EmailInputWidget extends StatelessWidget {
@@ -13,8 +14,10 @@ class EmailInputWidget extends StatelessWidget {
           hintText: "Email", border: OutlineInputBorder()),
       onChanged: (value) {},
       validator: (value) {
-        if (value!.isEmpty) {
-          return "Enter email";
+        if (value == null || value.isEmpty) {
+          return 'Please enter an email';
+        } else if (!Validation.emailValidator(value)) {
+          return 'Please enter a valid email';
         }
         return null;
       },
