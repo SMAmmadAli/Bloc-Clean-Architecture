@@ -1,27 +1,35 @@
 import 'package:bloc_clean_architecture/config/colors/colors.dart';
 import 'package:bloc_clean_architecture/config/components/round_button.dart';
 import 'package:bloc_clean_architecture/config/routes/routes_name.dart';
+import 'package:bloc_clean_architecture/services/splash/splash_services.dart';
 import 'package:flutter/material.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
   @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  SplashService _splashService = SplashService();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _splashService.isLogin(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Splash Screen"),
-      ),
-      body: Center(
-        child: RoundButton(
-            title: "Move to Login Screen",
-            height: 40,
-            width: MediaQuery.of(context).size.width * 0.6,
-            color: AppColors.blueColor,
-            onTap: () {
-              Navigator.pushNamed(context, RoutesName.loginScreen);
-            }),
-      ),
-    );
+    return const Scaffold(
+        body: SafeArea(
+      child: Center(
+          child: Text(
+        "Splash Screen",
+        style: TextStyle(fontSize: 50, fontWeight: FontWeight.w400),
+      )),
+    ));
   }
 }
