@@ -1,3 +1,4 @@
+import 'package:bloc_clean_architecture/config/components/internet_exception.dart';
 import 'package:flutter/material.dart';
 
 import '../../config/routes/routes_name.dart';
@@ -12,12 +13,17 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home Screen"),
       ),
-      body: Center(
-        child: TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, RoutesName.splashScreen);
-            },
-            child: Text("Move to Splash Screen $homeText!")),
+      body: Column(
+        children: [
+          Center(
+            child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.splashScreen);
+                },
+                child: Text("Move to Splash Screen $homeText!")),
+          ),
+          InternetException(ontap: () {})
+        ],
       ),
     );
   }
