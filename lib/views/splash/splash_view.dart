@@ -1,6 +1,3 @@
-import 'package:bloc_clean_architecture/config/colors/colors.dart';
-import 'package:bloc_clean_architecture/config/components/round_button.dart';
-import 'package:bloc_clean_architecture/config/routes/routes_name.dart';
 import 'package:bloc_clean_architecture/services/splash/splash_services.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +13,6 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _splashService.isLogin(context);
   }

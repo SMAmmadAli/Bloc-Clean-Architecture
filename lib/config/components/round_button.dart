@@ -1,3 +1,4 @@
+import 'package:bloc_clean_architecture/config/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class RoundButton extends StatelessWidget {
@@ -26,7 +27,10 @@ class RoundButton extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+            style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+                color: AppColors.whiteColor),
           ),
         ),
       ),
