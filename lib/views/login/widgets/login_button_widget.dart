@@ -1,6 +1,7 @@
 import 'package:bloc_clean_architecture/config/colors/colors.dart';
 import 'package:bloc_clean_architecture/config/colors/texts.dart';
 import 'package:bloc_clean_architecture/config/components/round_button.dart';
+import 'package:bloc_clean_architecture/config/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class LoginButtonWidget extends StatelessWidget {
@@ -17,6 +18,8 @@ class LoginButtonWidget extends StatelessWidget {
         onTap: () {
           if (formkey.currentState!.validate()) {
             print(AppText.loginText);
+            Navigator.pushNamed(context, RoutesName.homeScreen,
+                arguments: "Han hogya login");
           }
         });
   }
