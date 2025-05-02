@@ -9,7 +9,7 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  SplashService _splashService = SplashService();
+  final SplashService _splashService = SplashService();
 
   @override
   void initState() {

@@ -1,3 +1,4 @@
+import 'package:bloc_clean_architecture/config/models/home_model.dart';
 import 'package:bloc_clean_architecture/config/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class Routes {
       case RoutesName.loginScreen:
         return MaterialPageRoute(builder: (context) => const LoginView());
       case RoutesName.homeScreen:
-        final args = settings.arguments as String;
+        final args = settings.arguments as HomeModel;
         return MaterialPageRoute(
             builder: (context) => HomeView(homeText: args));
       default:

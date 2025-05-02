@@ -1,12 +1,12 @@
-import 'package:bloc_clean_architecture/config/components/internet_exception.dart';
 import 'package:bloc_clean_architecture/config/data/exceptions/app_exceptions.dart';
+import 'package:bloc_clean_architecture/config/models/home_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../config/routes/routes_name.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key, required this.homeText});
-  final String homeText;
+  final HomeModel homeText;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,8 @@ class HomeView extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, RoutesName.splashScreen);
                 },
-                child: Text("Move to Splash Screen $homeText!")),
+                child: Text("Move to Splash Screen ${homeText.text1}!")),
           ),
-          InternetException(ontap: () {
-            Navigator.pushNamed(context, RoutesName.splashScreen);
-          })
         ],
       ),
     );
